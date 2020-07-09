@@ -2,12 +2,12 @@ defmodule Dispatcher do
   use Matcher
   define_accept_types []
 
-  match "/schema-analysis-jobs", _ do
-    forward conn, [], "http://resource/schema-analysis-jobs"
+  match "/schema-analysis-jobs/*path", _ do
+    forward conn, path, "http://resource/schema-analysis-jobs"
   end
-  
-  match "/columns", _ do
-    forward conn, [], "http://resource/columns"
+
+  match "/columns/*path", _ do
+    forward conn, path, "http://resource/columns/"
   end
   
   post "/files", _ do
