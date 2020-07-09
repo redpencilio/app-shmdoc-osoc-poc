@@ -10,10 +10,6 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/columns/"
   end
   
-  post "/files", _ do
-    forward conn, [], "http://file/files"
-  end
-  
   post "/files/*path", _ do
     forward conn, path, "http://file/files/"
   end
