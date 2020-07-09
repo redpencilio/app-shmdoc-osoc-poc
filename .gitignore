@@ -1,0 +1,11 @@
+# All data (overrides many of above rules ...)
+data/*
+
+# Docker env
+.env
+docker-compose.override.yml
+
+# OS/editor-related
+*~
+__MACOSX
+.idea/
