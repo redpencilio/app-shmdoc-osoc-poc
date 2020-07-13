@@ -34,3 +34,12 @@ services:
       - database:database
     volumes:
       - ./data/files:/share
+  shmdoc-analyzer:
+    image: mikidi/mu-python-template:python3-port
+    volumes:
+      - /home/arno/Documents/shmdoc/rep:/app
+      - ./data/files:/share
+    environment:
+      MODE: "development"
+    ports:
+      - "8891:80"
