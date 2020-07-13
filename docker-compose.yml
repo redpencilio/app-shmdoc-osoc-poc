@@ -37,7 +37,7 @@ services:
   shmdoc-analyzer:
     image: mikidi/mu-python-template:python3-port
     volumes:
-      - /home/arno/Documents/shmdoc/rep:/app
+      - ../shmdoc-analyzer-service:/app
       - ./data/files:/share
     environment:
       MODE: "development"
