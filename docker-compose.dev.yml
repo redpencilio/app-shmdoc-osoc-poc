@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  frontend:
+    entrypoint: "echo 'service disabled'"
+    restart: "no"
+  identifier:
+    ports:
+      - 80:80
+  triplestore:
+    ports:
+      - 8890:8890
