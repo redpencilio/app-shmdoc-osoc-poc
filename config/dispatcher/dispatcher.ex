@@ -7,7 +7,7 @@ defmodule Dispatcher do
   end
 
   match "/schema-analysis-jobs/*path", _ do
-    forward conn, path, "http://resource/schema-analysis-jobs"
+    forward conn, path, "http://resource/schema-analysis-jobs/"
   end
 
   match "/columns/*path", _ do

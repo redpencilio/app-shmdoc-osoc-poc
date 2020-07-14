@@ -36,12 +36,13 @@ services:
       - database:database
     volumes:
       - ./data/files:/share
-  shmdoc-analyzer:
-    build: "../shmdoc-analyzer-service"
-    volumes:
-      - ../shmdoc-analyzer-service:/app
-      - ./data/files:/share
-    environment:
-      MODE: "development"
-    ports:
-      - "8891:80"
+
+        #  shmdoc/analyzer:
+        #    build: "../shmdoc-analyzer-service"
+        #    volumes:
+        #      - ../shmdoc-analyzer-service:/app
+        #      - ./data/files:/share
+        #    environment:
+        #      MODE: "development"
+        #    ports:
+        #      - "8891:80"
