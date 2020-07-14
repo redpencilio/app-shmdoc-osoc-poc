@@ -37,7 +37,7 @@ services:
     volumes:
       - ./data/files:/share
   shmdoc-analyzer:
-    image: mikidi/mu-python-template:python3-port
+    build: "../shmdoc-analyzer-service"
     volumes:
       - ../shmdoc-analyzer-service:/app
       - ./data/files:/share
