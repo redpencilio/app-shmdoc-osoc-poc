@@ -7,6 +7,9 @@ services:
   identifier:
     ports:
       - 80:80
-  triplestore:
+  database:
     ports:
       - 8890:8890
+  shmdoc-analyzer:
+    ports:
+      - 8891:80
