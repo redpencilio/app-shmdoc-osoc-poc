@@ -34,10 +34,10 @@
   :class (s-prefix "ext:SchemaAnalysisJob")
   :properties `((:created :datetime ,(s-prefix "dct:created")))
   :has-one `((file :via ,(s-prefix "ext:file")
-                       :as "file"))
+                       :as "file")
              (source :via ,(s-prefix "ext:source")
                      :inverse t
-                     :as "source")))
+                     :as "source"))
   :has-many `((column :via ,(s-prefix "ext:column")
                        :as "columns"))
   :resource-base (s-url "http://example.com/schema-analysis-jobs/")
@@ -75,7 +75,7 @@
     :properties `((:name          :string     ,(s-prefix "ext:name"))
                   (:created       :datetime   ,(s-prefix "dct:created"))
                   (:description   :string     ,(s-prefix "ext:description"))
-                  (:note :string ,(s-prefix "ext:note"))
+                  (:note :string ,(s-prefix "ext:note")))
     :has-many `((schema-analysis-job :via ,(s-prefix "ext:source")
                       :as "source")) ;; Hoe het in de API attributen gaat zitten
                       ;; Predicaat dat de relatie gaat predicteren, kan zelf gekozen worden omdat we zelf definieren, lowercase benamingen
