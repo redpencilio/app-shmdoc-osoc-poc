@@ -35,7 +35,7 @@
   :properties `((:created :datetime ,(s-prefix "dct:created")))
   :has-one `((file :via ,(s-prefix "ext:file")
                        :as "file")
-             (source :via ,(s-prefix "ext:source")
+             (source :via ,(s-prefix "ext:jobs")
                      :inverse t
                      :as "source"))
   :has-many `((column :via ,(s-prefix "ext:column")
@@ -76,7 +76,7 @@
                   (:created       :datetime   ,(s-prefix "dct:created"))
                   (:description   :string     ,(s-prefix "ext:description"))
                   (:note :string ,(s-prefix "ext:note")))
-    :has-many `((schema-analysis-job :via ,(s-prefix "ext:source")
+    :has-many `((schema-analysis-job :via ,(s-prefix "ext:jobs")
                       :as "source")) ;; Hoe het in de API attributen gaat zitten
                       ;; Predicaat dat de relatie gaat predicteren, kan zelf gekozen worden omdat we zelf definieren, lowercase benamingen
     :resource-base (s-url "http://example.com/sources/")
