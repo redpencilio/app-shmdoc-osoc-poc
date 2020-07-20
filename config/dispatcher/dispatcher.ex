@@ -14,6 +14,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/columns/"
   end
 
+  match "/sources/*path", _ do
+    forward conn, path, "http://resource/sources/"
+  end
+
   post "/files/*path", _ do
     forward conn, path, "http://file/files/"
   end
