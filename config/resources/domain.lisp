@@ -97,3 +97,11 @@
   :resource-base (s-url "http://example.com/files/")
   :features `(include-uri)
   :on-path "files")
+
+(define-resource unit ()
+  :class (s-prefix "nfo:FileDataObject")
+  :properties `((:name      :string     ,(s-prefix "ext:unitName"))
+                (:notation        :string     ,(s-prefix "ext:unitNotation")))
+  :resource-base (s-url "http://example.com/units/")
+  :features `(include-uri)
+  :on-path "units")

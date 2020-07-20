@@ -18,6 +18,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/sources/"
   end
 
+  match "/units/*path", _ do
+    forward conn, path, "http://resource/sources/"
+  end
+
   post "/files/*path", _ do
     forward conn, path, "http://file/files/"
   end
