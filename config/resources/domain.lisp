@@ -37,10 +37,13 @@
                        :as "file"))
   :has-many `((column :via ,(s-prefix "ext:column")
                        :as "columns"))
+              (schema-analysis-job :via ,(s-prefix "ext:source")
+                      :inverse t
+                      :as "source"))
   :resource-base (s-url "http://example.com/schema-analysis-jobs/")
   :features '(include-uri)
   :on-path "schema-analysis-jobs")
-  
+
 (define-resource column ()
   :class (s-prefix "ext:Column")
   :properties `((:name :string ,(s-prefix "ext:name"))
@@ -66,6 +69,19 @@
   :resource-base (s-url "http://example.com/columns/")
   :features '(include-uri)
   :on-path "columns")
+
+  (define-resource source ()
+    :class (s-prefix "ext:Source")
+    :properties `((:name          :string     ,(s-prefix "ext:name"))
+                  (:created       :datetime   ,(s-prefix "dct:created"))
+                  (:description   :string     ,(s-prefix "ext:description"))
+                  (:note :string ,(s-prefix "ext:note"))
+    :has-many `((schema-analysis-job :via ,(s-prefix "ext:source")
+                      :as "source")) ;; Hoe het in de API attributen gaat zitten
+                      ;; Predicaat dat de relatie gaat predicteren, kan zelf gekozen worden omdat we zelf definieren, lowercase benamingen
+    :resource-base (s-url "http://example.com/sources/")
+    :features '(include-uri)
+    :on-path "sources")
 
 (define-resource file ()
   :class (s-prefix "nfo:FileDataObject")
