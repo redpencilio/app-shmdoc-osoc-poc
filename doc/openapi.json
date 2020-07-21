@@ -1,0 +1,1964 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "generated mu-cl-resources api",
+    "description": "API generated from mu-cl-resources for a specific domain",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "basePath": "/",
+  "produces": [
+    "application/vnd.api+json"
+  ],
+  "paths": {
+    "/schema-analysis-jobs": {
+      "get": {
+        "summary": "Lists instances of schema-analysis-job",
+        "description": "Provides the listing of resources of type schema-analysis-job",
+        "parameters": [],
+        "tags": [
+          "non-relationship",
+          "listing",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing of schema-analysis-job instances",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/schema-analysis-job"
+              }
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates new instance of schema-analysis-job",
+        "description": "Creates resource of type schema-analysis-job",
+        "parameters": [
+          {
+            "name": "schema-analysis-jobs",
+            "in": "body",
+            "description": "Description of schema-analysis-jobs to add",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/schema-analysis-job"
+            }
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "creation",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "204": {
+            "description": "Creation of schema-analysis-job instance",
+            "schema": {
+              "$ref": "#/definitions/schema-analysis-job"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/schema-analysis-jobs/{id}": {
+      "get": {
+        "summary": "Retrieves instance of type schema-analysis-job",
+        "description": "Retrieves resource of type schema-analysis-job",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "show",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of schema-analysis-job",
+            "schema": {
+              "$ref": "#/definitions/schema-analysis-job"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates instance of type schema-analysis-job",
+        "description": "Updates resource of type schema-analysis-job",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "update",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of schema-analysis-job",
+            "schema": {
+              "$ref": "#/definitions/schema-analysis-job"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes instance of type schema-analysis-job",
+        "description": "Deletes resource of type schema-analysis-job",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "delete",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of schema-analysis-job",
+            "schema": {
+              "$ref": "#/definitions/schema-analysis-job"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/schema-analysis-jobs/{id}/columns": {
+      "get": {
+        "summary": "Lists columns relationship.",
+        "description": "Lists columns relationship.   Contains results for links named columns of mu-cl-resource type columns, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "column",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of columns",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/column"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schema-analysis-jobs/{id}/links/columns": {
+      "get": {
+        "summary": "Lists columns relationship.",
+        "description": "Lists columns relationship.   Contains results for links named columns of mu-cl-resource type columns, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "column",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of columns",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/column"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates columns relationship.",
+        "description": "Updates columns relationship.   Updates results for links named columns of mu-cl-resource type columns, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "description": "Array containing specifiers of the new relationship",
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of the resource, always columns for this call."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "uuid of the newly connected resource"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "column",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation columns updated successfully"
+          }
+        }
+      },
+      "post": {
+        "summary": "Adds resources to the columns relationship",
+        "description": "Adds resources to columns relationship.  Adds result for link named columns of mu-cl-resources type columns, coming from resource of mu-cl-resources type schema-analysis-jobs",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "description": "Array containing specifiers of the new relationship",
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of the resource, always columns for this call."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "uuid of the newly connected resource"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "column",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation columns updated successfully"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Removes resources from the columns relationship",
+        "description": "Removes resource from columns relationship.  Removes results for link named columns of mu-cl-resources type columns, coming from resource of mu-cl-resources type schema-analysis-jobs",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "description": "Array containing specifiers of the new relationship",
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of the resource, always columns for this call."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "uuid of the newly connected resource"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "column",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation columns updated successfully"
+          }
+        }
+      }
+    },
+    "/schema-analysis-jobs/{id}/file": {
+      "get": {
+        "summary": "Lists file relationship.",
+        "description": "Lists file relationship.   Contains results for links named file of mu-cl-resource type files, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "file",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of files",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/file"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schema-analysis-jobs/{id}/links/file": {
+      "get": {
+        "summary": "Lists file relationship.",
+        "description": "Lists file relationship.   Contains results for links named file of mu-cl-resource type files, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "file",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of files",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/file"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates file relationship.",
+        "description": "Updates file relationship.   Updates results for links named file of mu-cl-resource type files, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of the resource, always files for this call."
+                },
+                "id": {
+                  "type": "string",
+                  "description": "uuid of the newly connected resource"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "file",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation file updated successfully"
+          }
+        }
+      }
+    },
+    "/schema-analysis-jobs/{id}/source": {
+      "get": {
+        "summary": "Lists source relationship.",
+        "description": "Lists source relationship.   Contains results for links named source of mu-cl-resource type sources, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "source",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of sources",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/source"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schema-analysis-jobs/{id}/links/source": {
+      "get": {
+        "summary": "Lists source relationship.",
+        "description": "Lists source relationship.   Contains results for links named source of mu-cl-resource type sources, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "source",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of sources",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/source"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates source relationship.",
+        "description": "Updates source relationship.   Updates results for links named source of mu-cl-resource type sources, coming from resource of mu-cl-resources type schema-analysis-jobs.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of the resource, always sources for this call."
+                },
+                "id": {
+                  "type": "string",
+                  "description": "uuid of the newly connected resource"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "source",
+          "schema-analysis-job"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation source updated successfully"
+          }
+        }
+      }
+    },
+    "/columns": {
+      "get": {
+        "summary": "Lists instances of column",
+        "description": "Provides the listing of resources of type column",
+        "parameters": [],
+        "tags": [
+          "non-relationship",
+          "listing",
+          "column"
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing of column instances",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/column"
+              }
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates new instance of column",
+        "description": "Creates resource of type column",
+        "parameters": [
+          {
+            "name": "columns",
+            "in": "body",
+            "description": "Description of columns to add",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/column"
+            }
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "creation",
+          "column"
+        ],
+        "responses": {
+          "204": {
+            "description": "Creation of column instance",
+            "schema": {
+              "$ref": "#/definitions/column"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/columns/{id}": {
+      "get": {
+        "summary": "Retrieves instance of type column",
+        "description": "Retrieves resource of type column",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "show",
+          "column"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of column",
+            "schema": {
+              "$ref": "#/definitions/column"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates instance of type column",
+        "description": "Updates resource of type column",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "update",
+          "column"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of column",
+            "schema": {
+              "$ref": "#/definitions/column"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes instance of type column",
+        "description": "Deletes resource of type column",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "delete",
+          "column"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of column",
+            "schema": {
+              "$ref": "#/definitions/column"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/columns/{id}/column": {
+      "get": {
+        "summary": "Lists column relationship.",
+        "description": "Lists column relationship.   Contains results for links named column of mu-cl-resource type schema-analysis-jobs, coming from resource of mu-cl-resources type columns.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "schema-analysis-job",
+          "column"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of schema-analysis-jobs",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/schema-analysis-job"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/columns/{id}/links/column": {
+      "get": {
+        "summary": "Lists column relationship.",
+        "description": "Lists column relationship.   Contains results for links named column of mu-cl-resource type schema-analysis-jobs, coming from resource of mu-cl-resources type columns.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "schema-analysis-job",
+          "column"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of schema-analysis-jobs",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/schema-analysis-job"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates column relationship.",
+        "description": "Updates column relationship.   Updates results for links named column of mu-cl-resource type schema-analysis-jobs, coming from resource of mu-cl-resources type columns.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of the resource, always schema-analysis-jobs for this call."
+                },
+                "id": {
+                  "type": "string",
+                  "description": "uuid of the newly connected resource"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "schema-analysis-job",
+          "column"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation column updated successfully"
+          }
+        }
+      }
+    },
+    "/sources": {
+      "get": {
+        "summary": "Lists instances of source",
+        "description": "Provides the listing of resources of type source",
+        "parameters": [],
+        "tags": [
+          "non-relationship",
+          "listing",
+          "source"
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing of source instances",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/source"
+              }
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates new instance of source",
+        "description": "Creates resource of type source",
+        "parameters": [
+          {
+            "name": "sources",
+            "in": "body",
+            "description": "Description of sources to add",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/source"
+            }
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "creation",
+          "source"
+        ],
+        "responses": {
+          "204": {
+            "description": "Creation of source instance",
+            "schema": {
+              "$ref": "#/definitions/source"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/sources/{id}": {
+      "get": {
+        "summary": "Retrieves instance of type source",
+        "description": "Retrieves resource of type source",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "show",
+          "source"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of source",
+            "schema": {
+              "$ref": "#/definitions/source"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates instance of type source",
+        "description": "Updates resource of type source",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "update",
+          "source"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of source",
+            "schema": {
+              "$ref": "#/definitions/source"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes instance of type source",
+        "description": "Deletes resource of type source",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "delete",
+          "source"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of source",
+            "schema": {
+              "$ref": "#/definitions/source"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/sources/{id}/source": {
+      "get": {
+        "summary": "Lists source relationship.",
+        "description": "Lists source relationship.   Contains results for links named source of mu-cl-resource type schema-analysis-jobs, coming from resource of mu-cl-resources type sources.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "schema-analysis-job",
+          "source"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of schema-analysis-jobs",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/schema-analysis-job"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sources/{id}/links/source": {
+      "get": {
+        "summary": "Lists source relationship.",
+        "description": "Lists source relationship.   Contains results for links named source of mu-cl-resource type schema-analysis-jobs, coming from resource of mu-cl-resources type sources.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "schema-analysis-job",
+          "source"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of schema-analysis-jobs",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/schema-analysis-job"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates source relationship.",
+        "description": "Updates source relationship.   Updates results for links named source of mu-cl-resource type schema-analysis-jobs, coming from resource of mu-cl-resources type sources.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "description": "Array containing specifiers of the new relationship",
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of the resource, always schema-analysis-jobs for this call."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "uuid of the newly connected resource"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "schema-analysis-job",
+          "source"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation source updated successfully"
+          }
+        }
+      },
+      "post": {
+        "summary": "Adds resources to the source relationship",
+        "description": "Adds resources to source relationship.  Adds result for link named source of mu-cl-resources type schema-analysis-jobs, coming from resource of mu-cl-resources type sources",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "description": "Array containing specifiers of the new relationship",
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of the resource, always schema-analysis-jobs for this call."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "uuid of the newly connected resource"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "schema-analysis-job",
+          "source"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation source updated successfully"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Removes resources from the source relationship",
+        "description": "Removes resource from source relationship.  Removes results for link named source of mu-cl-resources type schema-analysis-jobs, coming from resource of mu-cl-resources type sources",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "description": "Array containing specifiers of the new relationship",
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of the resource, always schema-analysis-jobs for this call."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "uuid of the newly connected resource"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "schema-analysis-job",
+          "source"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation source updated successfully"
+          }
+        }
+      }
+    },
+    "/files": {
+      "get": {
+        "summary": "Lists instances of file",
+        "description": "Provides the listing of resources of type file",
+        "parameters": [],
+        "tags": [
+          "non-relationship",
+          "listing",
+          "file"
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing of file instances",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/file"
+              }
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates new instance of file",
+        "description": "Creates resource of type file",
+        "parameters": [
+          {
+            "name": "files",
+            "in": "body",
+            "description": "Description of files to add",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "creation",
+          "file"
+        ],
+        "responses": {
+          "204": {
+            "description": "Creation of file instance",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/files/{id}": {
+      "get": {
+        "summary": "Retrieves instance of type file",
+        "description": "Retrieves resource of type file",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "show",
+          "file"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of file",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates instance of type file",
+        "description": "Updates resource of type file",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "update",
+          "file"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of file",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes instance of type file",
+        "description": "Deletes resource of type file",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "non-relationship",
+          "delete",
+          "file"
+        ],
+        "responses": {
+          "200": {
+            "description": "Instance of file",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "default": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/files/{id}/download": {
+      "get": {
+        "summary": "Lists download relationship.",
+        "description": "Lists download relationship.   Contains results for links named download of mu-cl-resource type files, coming from resource of mu-cl-resources type files.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "file"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of files",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/file"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/files/{id}/links/download": {
+      "get": {
+        "summary": "Lists download relationship.",
+        "description": "Lists download relationship.   Contains results for links named download of mu-cl-resource type files, coming from resource of mu-cl-resources type files.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "relationship",
+          "listing",
+          "file"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of instances of files",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "provides relevant links to fetch and update the relationship",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                },
+                "data": {
+                  "$ref": "#/definitions/file"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates download relationship.",
+        "description": "Updates download relationship.   Updates results for links named download of mu-cl-resource type files, coming from resource of mu-cl-resources type files.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "uuid of the requested resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "New relationship contents",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of the resource, always files for this call."
+                },
+                "id": {
+                  "type": "string",
+                  "description": "uuid of the newly connected resource"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "relationship",
+          "update",
+          "file"
+        ],
+        "responses": {
+          "204": {
+            "description": "Relation download updated successfully"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "schema-analysis-job": {
+      "type": "object",
+      "description": "Resource of type schema-analysis-job",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of this resource, always schema-analysis-jobs"
+        },
+        "id": {
+          "type": "string",
+          "description": "uuid of the supplied resource"
+        },
+        "relationships": {
+          "type": "object",
+          "properties": {
+            "columns": {
+              "type": "object",
+              "description": "Provides relation columns containing objects of type columns",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "Links to relationships methods for columns",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                }
+              }
+            },
+            "file": {
+              "type": "object",
+              "description": "Provides relation file containing objects of type files",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "Links to relationships methods for file",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                }
+              }
+            },
+            "source": {
+              "type": "object",
+              "description": "Provides relation source containing objects of type sources",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "Links to relationships methods for source",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "created": {
+              "description": "Retrieves the created property of mu-cl-resources type datetime",
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "column": {
+      "type": "object",
+      "description": "Resource of type column",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of this resource, always columns"
+        },
+        "id": {
+          "type": "string",
+          "description": "uuid of the supplied resource"
+        },
+        "relationships": {
+          "type": "object",
+          "properties": {
+            "column": {
+              "type": "object",
+              "description": "Provides relation column containing objects of type schema-analysis-jobs",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "Links to relationships methods for column",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Retrieves the name property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "path": {
+              "description": "Retrieves the path property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "description": {
+              "description": "Retrieves the description property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "note": {
+              "description": "Retrieves the note property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "disable-processing": {
+              "description": "Retrieves the disable-processing property of mu-cl-resources type boolean",
+              "type": "boolean"
+            },
+            "data-type": {
+              "description": "Retrieves the data-type property of mu-cl-resources type url",
+              "type": "string"
+            },
+            "quantity-kind": {
+              "description": "Retrieves the quantity-kind property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "unit": {
+              "description": "Retrieves the unit property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "record-count": {
+              "description": "Retrieves the record-count property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "missing-count": {
+              "description": "Retrieves the missing-count property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "null-count": {
+              "description": "Retrieves the null-count property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "min": {
+              "description": "Retrieves the min property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "max": {
+              "description": "Retrieves the max property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "mean": {
+              "description": "Retrieves the mean property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "median": {
+              "description": "Retrieves the median property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "common-values": {
+              "description": "Retrieves the common-values property of mu-cl-resources type string",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "description": "Resource of type source",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of this resource, always sources"
+        },
+        "id": {
+          "type": "string",
+          "description": "uuid of the supplied resource"
+        },
+        "relationships": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "object",
+              "description": "Provides relation source containing objects of type schema-analysis-jobs",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "Links to relationships methods for source",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Retrieves the name property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "created": {
+              "description": "Retrieves the created property of mu-cl-resources type datetime",
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": {
+              "description": "Retrieves the description property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "note": {
+              "description": "Retrieves the note property of mu-cl-resources type string",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "file": {
+      "type": "object",
+      "description": "Resource of type file",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of this resource, always files"
+        },
+        "id": {
+          "type": "string",
+          "description": "uuid of the supplied resource"
+        },
+        "relationships": {
+          "type": "object",
+          "properties": {
+            "download": {
+              "type": "object",
+              "description": "Provides relation download containing objects of type files",
+              "properties": {
+                "links": {
+                  "type": "object",
+                  "description": "Links to relationships methods for download",
+                  "properties": {
+                    "self": {
+                      "type": "string",
+                      "description": "a link for the relationship itself (a \"relationship link\"). This link allows the client to directly manipulate the relationship."
+                    },
+                    "related": {
+                      "type": "string",
+                      "description": "A \"related resource link\" provides access to resource objects linked in a relationship. When fetched, the related resource object(s) are returned as the response’s primary data."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "filename": {
+              "description": "Retrieves the filename property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "format": {
+              "description": "Retrieves the format property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "size": {
+              "description": "Retrieves the size property of mu-cl-resources type number",
+              "type": "number"
+            },
+            "extension": {
+              "description": "Retrieves the extension property of mu-cl-resources type string",
+              "type": "string"
+            },
+            "created": {
+              "description": "Retrieves the created property of mu-cl-resources type datetime",
+              "type": "string",
+              "format": "date-time"
+            },
+            "content-type": {
+              "description": "Retrieves the content-type property of mu-cl-resources type string",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

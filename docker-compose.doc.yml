@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  resources-openapi-generator:
+    image: semtech/mu-cl-resources-openapi-generator
+    volumes:
+      - ./config/resources:/config
+      - ./doc/:/config/output
+    links:
+      - database:database
+    restart: "no"
