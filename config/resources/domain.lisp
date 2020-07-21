@@ -65,7 +65,9 @@
                 (:common-values :string ,(s-prefix "ext:commonValues")))
   :has-one `((schema-analysis-job :via ,(s-prefix "ext:column")
                    :inverse t
-                    :as "column"))
+                    :as "column")
+             (unit              :via        ,(s-prefix "ext:unit")
+                                :as "unit"))
   :resource-base (s-url "http://example.com/columns/")
   :features '(include-uri)
   :on-path "columns")
@@ -99,9 +101,14 @@
   :on-path "files")
 
 (define-resource unit ()
-  :class (s-prefix "nfo:FileDataObject")
+  :class (s-prefix "ext:Unit")
   :properties `((:name      :string     ,(s-prefix "ext:unitName"))
-                (:notation        :string     ,(s-prefix "ext:unitNotation")))
-  :resource-base (s-url "http://example.com/units/")
+                (:notation        :string     ,(s-prefix "ext:unitNotation"))
+                (:uri       :url    ,(s-prefix "ext:unitUri"))
+                (:definition      :string     ,(s-prefix "ext:unitDefinition")))
+  :resource-base (s-url "http://vocab.nerc.ac.uk/collection/P06/current/")
+  :has-many `((column :via ,(s-prefix "ext:unit")
+  			:inverse t
+                       :as "column"))
   :features `(include-uri)
   :on-path "units")
