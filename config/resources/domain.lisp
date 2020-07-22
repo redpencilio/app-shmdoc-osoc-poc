@@ -53,7 +53,6 @@
                 (:disable-processing :boolean ,(s-prefix "ext:disableProcessing"))
                 (:data-type :url ,(s-prefix "ext:dataType")) ;; One of https://www.w3.org/TR/xmlschema-2/#built-in-datatypes
                 (:quantity-kind :string ,(s-prefix "ext:quantityKind")) ;; See http://www.qudt.org/pages/HomePage.html later on
-                (:unit :string ,(s-prefix "ext:unit")) ;; See http://www.qudt.org/pages/HomePage.html later on
                 ;; Mini-analysis below. Should become part of other entity eventually
                 (:record-count :number ,(s-prefix "ext:recordCount"))
                 (:missing-count :number ,(s-prefix "ext:missingCount"))
