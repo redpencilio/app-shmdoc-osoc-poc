@@ -1,0 +1,72 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+INSERT DATA { 
+	GRAPH <http://mu.semte.ch/application> { 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGN/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGN/> ext:unitName """Degrees north""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGN/> ext:unitNotation """degree_north""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGN/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/DEGN/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGN/> ext:unitDefinition """Unavailable""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGN/> mu:uuid """DEGN""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ext:unitName """Litres""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ext:unitNotation """l""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ext:unitDefinition """Unavailable""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> mu:uuid """ULIT""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGE/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGE/> ext:unitName """Degrees east""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGE/> ext:unitNotation """degree_east""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGE/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/DEGE/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGE/> ext:unitDefinition """Unavailable""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGE/> mu:uuid """DEGE""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UYRS/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UYRS/> ext:unitName """Years""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UYRS/> ext:unitNotation """yr""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UYRS/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/UYRS/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UYRS/> ext:unitDefinition """A time interval of 365.25 days or 31557600 seconds.""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UYRS/> mu:uuid """UYRS""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGF/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGF/> ext:unitName """Degrees Fahrenheit""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGF/> ext:unitNotation """degF""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGF/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/DEGF/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGF/> ext:unitDefinition """""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/DEGF/> mu:uuid """DEGF""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/VVCC/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/VVCC/> ext:unitName """Cubic centimetres""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/VVCC/> ext:unitNotation """cm^3""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/VVCC/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/VVCC/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/VVCC/> ext:unitDefinition """Unit of volume which is equal to 1 millilitre or 10^-6 cubic metre.""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/VVCC/> mu:uuid """VVCC""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/KGXX/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/KGXX/> ext:unitName """Kilograms""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/KGXX/> ext:unitNotation """kg""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/KGXX/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/KGXX/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/KGXX/> ext:unitDefinition """The SI standard unit of mass.""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/KGXX/> mu:uuid """KGXX""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UTAA/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UTAA/> ext:unitName """Days""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UTAA/> ext:unitNotation """d""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UTAA/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/UTAA/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UTAA/> ext:unitDefinition """A time interval of 24 hours or 86400 seconds.""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UTAA/> mu:uuid """UTAA""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UGRM/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UGRM/> ext:unitName """Grams""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UGRM/> ext:unitNotation """g""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UGRM/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/UGRM/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UGRM/> ext:unitDefinition """One thousandth part of the SI base unit of mass (kilogram).""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UGRM/> mu:uuid """UGRM""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ext:unitName """Degrees Celsius""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ext:unitNotation """degC""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ext:unitDefinition """Unavailable""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> mu:uuid """UPAA""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> a ext:Unit . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> ext:unitName """Kilometres""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> ext:unitNotation """km""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> ext:unitUri <http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> ext:unitDefinition """Unit of length which is one thousand metres.""" . 
+		<http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> mu:uuid """ULKM""" . 
+	}
+}
