@@ -78,7 +78,7 @@
                   (:description   :string     ,(s-prefix "ext:description"))
                   (:note :string ,(s-prefix "ext:note")))
     :has-many `((schema-analysis-job :via ,(s-prefix "ext:jobs")
-                      :as "analysis-job")) ;; Hoe het in de API attributen gaat zitten
+                      :as "analysis-jobs")) ;; Hoe het in de API attributen gaat zitten
                       ;; Predicaat dat de relatie gaat predicteren, kan zelf gekozen worden omdat we zelf definieren, lowercase benamingen
     :resource-base (s-url "http://example.com/sources/")
     :features '(include-uri)
