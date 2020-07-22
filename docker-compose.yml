@@ -24,6 +24,12 @@ services:
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
     volumes:
       - ./data/db:/data
+  migrations-service:
+    image: semtech/mu-migrations-service:0.5.1
+    volumes:
+      - ./config/migrations:/data/migrations
+    environment:
+      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
   resource:
     image: semtech/mu-cl-resources:1.19.0
     links:
