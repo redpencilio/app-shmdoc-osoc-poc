@@ -19,7 +19,7 @@ Shmdoc is built with the [mu.semte.ch framework](https://mu.semte.ch/) which mea
 Management of the different microservices is done with `docker-compose`.
 
 ### Overview of microservices
-[Architecture][./shmdoc_arch.png]
+![Architecture](https://github.com/shmdoc/app-shmdoc-osoc-poc/blob/master/shmdoc_arch.png "Architecture of the shmdoc application")
 
 Shmdoc consists of a few microservices; some were already available in the mu.semte.ch framework. Others were built specifically for shmdoc.
 * [`db` ](https://github.com/tenforce/docker-virtuoso): the database is the heart of this application. The `db`-service is the central location for all data storage.
@@ -35,7 +35,7 @@ built for shmdoc:
 * [`shmdoc-analyzer`](https://github.com/shmdoc/shmdoc-analyzer-service): service that fetches files from the `db` service for automatic analysis.
 * [`frontend`](https://github.com/shmdoc/frontend-shmdoc-osoc-poc): service that provides a front-end for our application. It accesses all services in a user-friendly way.
 
-## Running the app
+## Running the app yourself
 
 ### Requirements
 To run this application you, must install:
@@ -44,38 +44,51 @@ To run this application you, must install:
 
 ### Configuring your environment
 
-This repository provides a main `docker-compose.yml`-file, as well as some environment-specific compose files. An easy way of configuring which additional compose files your setup should use, is to provide an [Environment File](https://docs.docker.com/compose/env-file/) (aka `.env`-file)
-
-For development:
-```
-COMPOSE_FILE=docker-compose.yml:docker-compose.dev.yml
-```
-For production:
+This repository provides a main `docker-compose.yml`-file, as well as some environment-specific compose files. You'll want to create a `.env`-file with that contains the following line:
 ```
 COMPOSE_FILE=docker-compose.yml:docker-compose.prod.yml
 ```
-
 ### Starting the stack
+After the requirements have been installed and the environment has been set start the stack with:
 ```
 docker-compose up
 ```
-See docker-compose's [cli-reference](https://docs.docker.com/compose/reference/overview/) for more information regarding the management of these kind of stacks.
-
 With the standard production settings, you can now open up a browser and browse to `localhost` where you will be presented with the user interface.
 
-## Development
+See docker-compose's [cli-reference](https://docs.docker.com/compose/reference/overview/) for more information regarding the management of these kind of stacks.
 
-(WIP)
+## Running the app for Development
+
+When running the app for development, you might want to alter your
+environment configuration. It is recommended to use an [Environment File](https://docs.docker.com/compose/env-file/) (aka `.env`-file)
+
+For development the `.env` can look like this:
+```
+COMPOSE_FILE=docker-compose.yml:docker-compose.dev.yml
+```
+The configuration in the `docker-compose.dev.yml` file will overwrite some standard settings for the specified microservices.
+* [Specific information for the `shmdoc-analyzer` service](https://github.com/shmdoc/shmdoc-analyzer-service#development-environment)
+* [Specific information for the `frontend` service](https://github.com/shmdoc/frontend-shmdoc-osoc-poc)
+
+The `docker-compose.dev.yml` file provided in this repository as an example will do the following things:
+* Disable the `frontend` service altogether.
+* Route port `80` to the identifier to skip the disabled `frontend`.
+* Expose port `8890` to access the database directly via the `SPARQL`-endpoint at `localhost:8890/sparql`
+* Expose the `shmdoc-analyzer` service for easy debugging at port `8891`.
+
+After your environment is configured you can start the code just like with the production environment settings:
+```
+docker-compose up
+```
 
 ## Documentation
 
 ### API-specification generation
 
-The [OpenAPI resources generator](https://github.com/mu-semtech/cl-resources-openapi-generator) can be used to generate an [openapi](https://www.openapis.org/)-specification for the API exposed by mu-cl-resources.  
+The [OpenAPI resources generator](https://github.com/mu-semtech/cl-resources-openapi-generator) can be used to generate an [openapi](https://www.openapis.org/)-specification for the API exposed by `resources`.  
 Following command will generate a `openapi.json`-file in `./doc`. Make sure to delete the old one should a file by this name already exist.
 ```
 docker-compose -f docker-compose.yml -f docker-compose.doc.yml up
 ```
 
 ### User documentation
-(WIP)
