@@ -28,7 +28,7 @@ COMPOSE_FILE=docker-compose.yml:docker-compose.prod.yml
 ```
 docker-compose up
 ```
-See docker-compose's [cli-reference](https://docs.docker.com/comSee docker-compose's [cli-reference](https://docs.docker.com/compose/reference/overview/) for more information regarding the management of these kind of stacks.pose/reference/overview/) for more information regarding the management of these kind of stacks.
+See docker-compose's [cli-reference](https://docs.docker.com/compose/reference/overview/) for more information regarding the management of these kind of stacks.pose/reference/overview/) for more information regarding the management of these kind of stacks.
 
 ## Documentation
 
