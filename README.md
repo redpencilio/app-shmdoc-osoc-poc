@@ -96,8 +96,11 @@ docker-compose -f docker-compose.yml -f docker-compose.doc.yml up
 Here you can find an introduction on getting started with shmdoc.
 We're assuming your IT-administrator has already setup shmdoc somewhere, e.g. at `localhost/` or `shmdoc.osoc.be`. 
 
-####Tutorial: Creating and viewing analysis jobs
+#### Tutorial: Creating and viewing analysis jobs
 
+Let's take a look at what you can do with shmdoc. In this tutorial you'll learn how you can create a source, upload a file and how you can view/edit the information about the columns in the file.
+
+Let's start by going to the webpagee were shmdoc is hosted.
 The shmdoc home page let you create new analysis, view running analysis, view historic analysis and get an overview of your running pages. 
 
 ![](img/Homepage.png "Screenshot of homepage")
