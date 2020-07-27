@@ -78,4 +78,45 @@ docker-compose -f docker-compose.yml -f docker-compose.doc.yml up
 ```
 
 ### User documentation
-(WIP)
+Here you can find an introduction on getting started with shmdoc.
+
+We're assuming your IT-administrator has already setup shmdoc somewhere, e.g. at `localhost/` or `shmdoc.osoc.be`. 
+
+The shmdoc home page let you create new analysis, view running analysis, view historic analysis and get an overview of your running pages. 
+
+[Screenshot of homepage]
+
+Let's start by creating a new analysis. 
+
+Every analysis is attached to a source. A source is used to group similar analysis. Hit "Created new source" to create a new one. Enter the name and a small description and press "Create source".
+
+[Screenshot of add source]
+
+Now we can upload a file to this source: Choose a file, selected the file you want. Be sure the name of the source you want to upload to is in the input field next to the "Upload job". You can also choose multiple files and upload them all at once to the same source. Once this is done, upload your job. 
+
+[Screenshot of upload job]
+
+Once the file has been uploaded, it will show in the running analysis overview page. It might take some time before the file appears or the running completes, depending on how large your file is. 
+
+[Screenshot of running analysis]
+
+Once your job is done, you can go to the shmdoc homepage (by clicking on "shmdoc" in the upper left corner). You can find your analysis result under "Historic analyses", but it's recommended to navigate to your analysis results by clicking "Sources" on the homepage and then clicking on the name of the source you've added your analysis job to. (The "Historic analyses" list can get quite long over time).
+
+[Screenshot of sources overview page]
+
+Click on the source you've just added your analysis job. Then you can see an overview of all analysis jobs connected to the source. Click on the one you've uploaded and you can see an overview of the results from the analysis.
+Fun fact: You can also add a new analysis job to a source from the page with an overview of all jobs of the source.
+
+[Screenshot source page]
+
+The overview of the analysis results is column per column. You can change the column you're viewing the results for by clicking on "Columns" in the upper left corner and clicking on the column you want to see.
+
+[Screenshot of column overview]
+
+Shmdoc has done it's job. Now it's time for a human to complete the results. You can do this by clicking on "edit" and adding the extra info you'd like. Let's say we want to add "Years" as the unit of this column. Once entered, hit "save" and you can see your unit property has been updated. 
+
+[Screenshot of edit page]
+
+Finally, you can take a look at columns from all analysis containing the same unit by clicking on "Show related" in the row of the unit property. Clicking on one of those brings you to the page for that column information.
+
+[Screenshot of related units]
