@@ -19,9 +19,9 @@ Shmdoc is built with the [mu.semte.ch framework](https://mu.semte.ch/) which mea
 Management of the different microservices is done with `docker-compose`.
 
 ### Overview of microservices
-![Architecture](https://github.com/shmdoc/app-shmdoc-osoc-poc/blob/master/shmdoc_arch.png "Architecture of the shmdoc application")
+![Architecture](img/shmdoc_arch.png "Architecture of the shmdoc application")
 
-Shmdoc consists of a few microservices; some were already available in the mu.semte.ch framework. Others were built specifically for shmdoc.
+Shmdoc consists of a few microservices. Some were already available in the mu.semte.ch framework. Others were built specifically for shmdoc.
 * [`db` ](https://github.com/tenforce/docker-virtuoso): the database is the heart of this application. The `db`-service is the central location for all data storage.
 * [`migrations`](https://github.com/mu-semtech/mu-migrations-service): service to import existing databases in the `db` service. This service can for example be used to import existing vocabularies into the database (as is done for the units vocabulary in this proof of concept.)
 * [`resources`](https://github.com/mu-semtech/mu-cl-resources): The resources service allows the database to be accessed by a JSON-API, as is done by the `frontend` service.
@@ -73,7 +73,7 @@ The configuration in the `docker-compose.dev.yml` file will overwrite some stand
 The `docker-compose.dev.yml` file provided in this repository as an example will do the following things:
 * Disable the `frontend` service altogether.
 * Route port `80` to the identifier to skip the disabled `frontend`.
-* Expose port `8890` to access the database directly via the `SPARQL`-endpoint at `localhost:8890/sparql`
+* Expose port `8890` to access the database directly via the `SPARQL`-endpoint at `localhost:8890/sparql`.
 * Expose the `shmdoc-analyzer` service for easy debugging at port `8891`.
 
 After your environment is configured you can start the code just like with the production environment settings:
