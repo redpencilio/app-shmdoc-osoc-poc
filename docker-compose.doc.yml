@@ -9,3 +9,9 @@ services:
     links:
       - database:database
     restart: "no"
+  resources-plantuml-generator:
+    image: madnificent/cl-resources-plantuml-generator
+    volumes:
+      - ./config/resources:/config
+      - ./doc/:/config/output
+    restart: "no"

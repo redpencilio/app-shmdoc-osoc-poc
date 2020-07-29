@@ -1,0 +1,46 @@
+@startuml
+set namespaceSeparator none
+class "schema-analysis-jobs"
+"schema-analysis-jobs" : created
+"schema-analysis-jobs" --> "1" "files" : file > 
+"schema-analysis-jobs" --> "1" "sources" : source > 
+"schema-analysis-jobs" --> "*" "columns" : columns > 
+class "columns"
+"columns" : name
+"columns" : path
+"columns" : description
+"columns" : note
+"columns" : disable-processing
+"columns" : data-type
+"columns" : quantity-kind
+"columns" : record-count
+"columns" : missing-count
+"columns" : null-count
+"columns" : min
+"columns" : max
+"columns" : mean
+"columns" : median
+"columns" : common-values
+"columns" --> "1" "schema-analysis-jobs" : column > 
+"columns" --> "1" "units" : unit > 
+class "sources"
+"sources" : name
+"sources" : created
+"sources" : description
+"sources" : note
+"sources" --> "*" "schema-analysis-jobs" : analysis-jobs > 
+class "files"
+"files" : filename
+"files" : format
+"files" : size
+"files" : extension
+"files" : created
+"files" : content-type
+"files" --> "1" "files" : download > 
+class "units"
+"units" : name
+"units" : notation
+"units" : uri
+"units" : definition
+"units" --> "*" "columns" : column > 
+@enduml
