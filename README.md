@@ -1,13 +1,13 @@
 # Shmdoc PoC application
 
-Shmdoc is a tool that allows for a combination of automated and human-supplied analysis and annotation of scientific datasets.
+Shmdoc is a tool that allows for a combination of automated and human-supplied analysis as well as annotation of scientific datasets.
 It was developed as a proof of concept application for [VLIZ](http://www.vliz.be/) during [Open Summer of Code](http://www.osoc.be) 2020.
 
 ## Overview
 ### Features
 
 * Automated **analysis** of `.xml`, `.json` and `.csv` files.
-* Human-supplied **annotation** of the unit of certain data through an easy-to-use **web interface**.
+* Human-supplied **annotation** of the unit of certain fields through an easy-to-use **web interface**.
 * Data stored as **triples** for linked-data/semantic analysis capabilities.
 * Extensible microservices software stack based on the [**mu.semte.ch** framework](https://mu.semte.ch/).
 
