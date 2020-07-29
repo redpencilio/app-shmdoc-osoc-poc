@@ -22,7 +22,7 @@ Management of the different microservices is done with `docker-compose`.
 ![Architecture](img/shmdoc_arch.png "Architecture of the shmdoc application")
 
 Shmdoc consists of a few microservices. Some were already available in the mu.semte.ch framework. Others were built specifically for shmdoc.
-* [`db` ](https://github.com/tenforce/docker-virtuoso): the database is the heart of this application. The `db`-service is the central location for all data storage.
+* [`db` ](https://github.com/tenforce/docker-virtuoso): the triplestore-database is the heart of this application. The `db`-service is the central location for all data storage.
 * [`migrations`](https://github.com/mu-semtech/mu-migrations-service): service to import existing databases in the `db` service. This service can for example be used to import existing vocabularies into the database (as is done for the units vocabulary in this proof of concept.)
 * [`resources`](https://github.com/mu-semtech/mu-cl-resources): The resources service allows the database to be accessed by a JSON-API, as is done by the `frontend` service.
 It is configured by `/config/resoures/domain.lisp`.
