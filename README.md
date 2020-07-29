@@ -35,6 +35,17 @@ built for shmdoc:
 * [`shmdoc-analyzer`](https://github.com/shmdoc/shmdoc-analyzer-service): service that fetches files from the `db` service for automatic analysis.
 * [`frontend`](https://github.com/shmdoc/frontend-shmdoc-osoc-poc): service that provides a front-end for our application. It accesses all services in a user-friendly way.
 
+ ## Data model
+Below is a schematic depiction of the `domain.lisp` file of the `resources` microservice. This serves as a data model of how the data is stored in the `db` service of our system.
+![Data model](doc/jsonapi-domain.svg "Data model of the shmdoc application")
+
+We will now go through all of the objects in this data model as if we would go through our flow (detailed in the [user documentation](#user-documentation)):
+* `sources`: We begin by selecting a previous or creating a new data source. E.g. "measurement of seals in Ostend". The actual data of data sources is linked to the sources with `schema-analysis-job`-objects.
+* `files`: A fileobject is made by the `file-service` upon an upload of an `xml`,`json` or `csv` file. e.g. "`seal-measurement-ostend.csv`"
+* `schema-analysis-job`: In our current workflow, every file gets analyzed immediately by the `shmdoc-analyzer` service, this generates a `schema-analysis-job` object in the database that is linked to a file.
+* `column` : For every column in the data of the file that belongs to this `schema-analysis-job`-object a `column`-object is generated that contains all of the statistical properties found during analysis.
+* `unit`: Every `column` object in the data model can be assigned a `unit` e.g. "Kilograms" 
+
 ## Running the app yourself
 
 ### Requirements
