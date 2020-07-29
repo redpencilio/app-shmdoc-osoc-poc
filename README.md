@@ -35,6 +35,17 @@ built for shmdoc:
 * [`shmdoc-analyzer`](https://github.com/shmdoc/shmdoc-analyzer-service): service that fetches files from the `db` service for automatic analysis.
 * [`frontend`](https://github.com/shmdoc/frontend-shmdoc-osoc-poc): service that provides a front-end for our application. It accesses all services in a user-friendly way.
 
+## Data model
+Below is a schematic depiction of the `domain.lisp` file of the `resources` microservice. This serves as a data model of how the data is stored in the `db` service of our system.
+![Data model](doc/jsonapi-domain.svg "Data model of the shmdoc application")
+We will now go through all of the objects in this data model as if we would go through our flow (detailed in the [user documentation](#user-documentation)):
+* `sources`: We begin by selecting a previous or creating a new data source. E.g. "measurement of seals in Ostend". The actual data of data sources is linked to the sources with `schema-analysis-job`-objects.
+* `files`: A fileobject is made by the `file-service` upon an upload of an `xml`,`json` or `csv` file. e.g. "`seal-measurement-ostend.csv`"
+* `schema-analysis-job`: In our current workflow, every file gets analyzed immediately by the `shmdoc-analyzer` service, this generates a `schema-analysis-job` object in the database that is linked to a file.
+* `column` : For every column in the data of the file that belongs to this `schema-analysis-job`-object a `column`-object is generated that contains all of the statistical properties found during analysis.
+* `unit`: Every `column` object in the data model can be assigned a `unit` e.g. "Kilograms"
+
+
 ## Running the app yourself
 
 ### Requirements
@@ -94,28 +105,28 @@ docker-compose -f docker-compose.yml -f docker-compose.doc.yml up
 ### User documentation
 
 Here you can find an introduction on getting started with shmdoc.
-We're assuming your IT-administrator has already setup shmdoc somewhere, e.g. at `localhost/` or `shmdoc.osoc.be`. 
+We're assuming your IT-administrator has already setup shmdoc somewhere, e.g. at `localhost/` or `shmdoc.osoc.be`.
 
 #### Tutorial: Creating and viewing analysis jobs
 
 Let's take a look at what you can do with shmdoc. In this tutorial you'll learn how you can create a source, upload a file and how you can view/edit the information about the columns in the file.
 
 Let's start by going to the webpagee were shmdoc is hosted.
-The shmdoc home page let you create new analysis, view running analysis, view historic analysis and get an overview of your running pages. 
+The shmdoc home page let you create new analysis, view running analysis, view historic analysis and get an overview of your running pages.
 
 ![](img/Homepage.png "Screenshot of homepage")
 
-Let's start by creating a new analysis. 
+Let's start by creating a new analysis.
 
 Every analysis is attached to a source. A source is used to group similar analysis. Hit "Created new source" to create a new one. Enter the name and a small description and press "Create source".
 
 ![](img/Add-Source.png "Screenshot of add source")
 
-Now we can upload a file to this source: Choose a file, selected the file you want. Be sure the name of the source you want to upload to is in the input field next to the "Upload job". You can also choose multiple files and upload them all at once to the same source. Once this is done, upload your job. 
+Now we can upload a file to this source: Choose a file, selected the file you want. Be sure the name of the source you want to upload to is in the input field next to the "Upload job". You can also choose multiple files and upload them all at once to the same source. Once this is done, upload your job.
 
 ![](img/Upload-Job.png "Screenshot of upload job")
 
-Once the file has been uploaded, it will show in the running analysis overview page. It might take some time before the file appears or the running completes, depending on how large your file is. 
+Once the file has been uploaded, it will show in the running analysis overview page. It might take some time before the file appears or the running completes, depending on how large your file is.
 
 ![](img/Running.png "Screenshot of running analysis")
 
@@ -132,7 +143,7 @@ The overview of the analysis results is column per column. You can change the co
 
 ![](img/Column.png "Screenshot of column overview")
 
-Shmdoc has done it's job. Now it's time for a human to complete the results. You can do this by clicking on "edit" and adding the extra info you'd like. Let's say we want to add "Years" as the unit of this column. Once entered, hit "save" and you can see your unit property has been updated. 
+Shmdoc has done it's job. Now it's time for a human to complete the results. You can do this by clicking on "edit" and adding the extra info you'd like. Let's say we want to add "Years" as the unit of this column. Once entered, hit "save" and you can see your unit property has been updated.
 
 ![](img/Edit.png "Screenshot of edit page")
 
