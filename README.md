@@ -37,6 +37,7 @@ built for shmdoc:
 
  ## Data model
 Below is a schematic depiction of the `domain.lisp` file of the `resources` microservice. This serves as a data model of how the data is stored in the `db` service of our system.
+
 ![Data model](doc/jsonapi-domain.svg "Data model of the shmdoc application")
 
 We will now go through all of the objects in this data model as if we would go through our flow (detailed in the [user documentation](#user-documentation)):
