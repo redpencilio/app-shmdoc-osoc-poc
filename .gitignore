@@ -9,3 +9,4 @@ docker-compose.override.yml
 *~
 __MACOSX
 .idea/
+.DS_Store
