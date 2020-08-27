@@ -12,4 +12,4 @@ services:
       - 8890:8890
   shmdoc-analyzer:
     ports:
-      - 8891:80
+      - 8891:8891

@@ -2,6 +2,7 @@
 set namespaceSeparator none
 class "schema-analysis-jobs"
 "schema-analysis-jobs" : created
+"schema-analysis-jobs" : finalized
 "schema-analysis-jobs" --> "1" "files" : file > 
 "schema-analysis-jobs" --> "1" "sources" : source > 
 "schema-analysis-jobs" --> "*" "columns" : columns > 
@@ -21,7 +22,7 @@ class "columns"
 "columns" : mean
 "columns" : median
 "columns" : common-values
-"columns" --> "1" "schema-analysis-jobs" : column > 
+"columns" --> "1" "schema-analysis-jobs" : job > 
 "columns" --> "1" "units" : unit > 
 class "sources"
 "sources" : name

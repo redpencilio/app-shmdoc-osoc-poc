@@ -1,6 +1,6 @@
 (in-package :mu-cl-resources)
 
-(setf *cache-model-properties-p* t)
+(setf *cache-model-properties-p* nil)
 (defparameter *include-count-in-paginated-responses* t
   "when non-nil, all paginated listings will contain the number
    of responses in the result object's meta.")
@@ -32,7 +32,8 @@
 
 (define-resource schema-analysis-job ()
   :class (s-prefix "ext:SchemaAnalysisJob")
-  :properties `((:created :datetime ,(s-prefix "dct:created")))
+  :properties `((:created :datetime ,(s-prefix "dct:created"))
+                (:finalized :datetime, (s-prefix "ext:finalized")))
   :has-one `((file :via ,(s-prefix "ext:file")
                        :as "file")
              (source :via ,(s-prefix "ext:jobs")
@@ -62,11 +63,13 @@
                 (:mean :number ,(s-prefix "ext:mean"))
                 (:median :number ,(s-prefix "ext:median"))
                 (:common-values :string ,(s-prefix "ext:commonValues")))
-  :has-one `((schema-analysis-job :via ,(s-prefix "ext:column")
+  :has-one `((schema-analysis-job :via ,(s-prefix "ext:job")
                    :inverse t
-                    :as "column")
+                    :as "job")
              (unit              :via        ,(s-prefix "ext:unit")
-                                :as "unit"))
+                                :as "unit")
+             (histogram :via ,(s-prefix "ext:file")
+                       :as "file"))
   :resource-base (s-url "http://example.com/columns/")
   :features '(include-uri)
   :on-path "columns")

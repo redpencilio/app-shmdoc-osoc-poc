@@ -2,7 +2,7 @@ defmodule Dispatcher do
   use Matcher
   define_accept_types []
 
-  get "/schema-analysis-jobs/:id/run", _ do
+  post "/schema-analysis-jobs/:id/run", _ do
     forward conn, [], "http://shmdoc-analyzer/schema-analysis-jobs/" <> id <> "/run"
   end
 
