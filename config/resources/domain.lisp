@@ -68,7 +68,7 @@
                     :as "job")
              (unit              :via        ,(s-prefix "ext:unit")
                                 :as "unit")
-             (histogram :via ,(s-prefix "ext:file")
+             (file :via ,(s-prefix "ext:file")
                        :as "file"))
   :resource-base (s-url "http://example.com/columns/")
   :features '(include-uri)
