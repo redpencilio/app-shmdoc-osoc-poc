@@ -62,9 +62,10 @@
                 (:max :number ,(s-prefix "ext:max"))
                 (:mean :number ,(s-prefix "ext:mean"))
                 (:median :number ,(s-prefix "ext:median"))
-                (:common-values :string ,(s-prefix "ext:commonValues")))
-  :has-one `((schema-analysis-job :via ,(s-prefix "ext:job")
-                   :inverse t
+                (:common-values :string ,(s-prefix "ext:commonValues"))
+                (:unit-specific-info :string ,(s-prefix "ext:unitSpecificInfo")))
+  :has-one `((schema-analysis-job :via ,(s-prefix "ext:column")
+                    :inverse t
                     :as "job")
              (unit              :via        ,(s-prefix "ext:unit")
                                 :as "unit")

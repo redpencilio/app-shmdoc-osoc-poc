@@ -6,6 +6,10 @@ defmodule Dispatcher do
     forward conn, [], "http://shmdoc-analyzer/schema-analysis-jobs/" <> id <> "/run"
   end
 
+  post "/column/:id/reanalyse", _ do
+    forward conn, [], "http://shmdoc-analyzer/column/" <> id <> "/reanalyse"
+  end
+
   match "/schema-analysis-jobs/*path", _ do
     forward conn, path, "http://resource/schema-analysis-jobs/"
   end
