@@ -1,6 +1,7 @@
 (in-package :mu-cl-resources)
 
 (setf *cache-model-properties-p* nil)
+(defparameter *default-page-size* 50)
 (defparameter *include-count-in-paginated-responses* t
   "when non-nil, all paginated listings will contain the number
    of responses in the result object's meta.")
